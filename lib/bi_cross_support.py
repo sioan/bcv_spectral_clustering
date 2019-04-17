@@ -97,6 +97,11 @@ def predict_vs_k(y_stack,**kwargs):
 
     options.update(kwargs)
 
+    np.random.shuffle(y_stack)
+    y_stack = y_stack.transpose()
+    np.random.shuffle(y_stack)
+    y_stack = y_stack.transpose()
+
     A,B,C,D = break_X_into_ABCD(y_stack,options['d_n_rows'],options['d_n_cols'])
     
         
